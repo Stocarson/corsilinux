@@ -51,20 +51,19 @@ name:argomenti
 ---
 
 .title[##Compilazione]
-<br/>
+
 --
 .dark[
 ###Pro
-- Codice ottimizzato e personalizzato
-- Possibile il controllo sui sorgenti
+- ####Codice ottimizzato e personalizzato
+- ####Possibile il controllo sui sorgenti
 </ul>
 ]
 --
 .dark[
 ###Contro
-- Lenta per software complessi
-- Non tiene traccia del software
-<br/><br/><br/>
+- ####Lenta per software complessi
+- ####Non tiene traccia del software
 ]
 --
 
@@ -77,26 +76,94 @@ name:argomenti
 
 .dark[
 ###Principalmente sono due:
-- .rpm per RHEL, Fedora e le loro derivate
-- .deb per Debian, Ubuntu e le loro derivate
+- ####.rpm per RHEL, Fedora e le loro derivate
+- ####.deb per Debian, Ubuntu e le loro derivate
 ]
 --
-<br/>
 .dark[
 ###Ma esistono anche
-- .tgz per Slackware
-- .pkg.tar.xz per Arch Linux
+- ####.tgz per Slackware
+- ####.pkg.tar.xz per Arch Linux
 ]
 ---
-.dark[##Le operazioni base]
+.title[##Le operazioni base]
+<br/><br/>
+.center[##Per installare un pacchetto
 <br/>
---
-
-.center[Per installare un pacchetto]
-```
+Debian based
+]
+```bash
 dpkg -i pacchetto.deb
 ```
-
+<br/><br/>
+.center[RPM based]
+```bash
+rpm -i pacchetto.rpm
+```
+---
+.title[##Le operazioni base]
+<br/><br/>
+.center[##Per rimuovere un pacchetto
+<br/>
+Debian based
+]
+```bash
+dpkg -r pacchetto.deb
+```
+<br/><br/>
+.center[RPM based]
+```bash
+rpm -r pacchetto.rpm
+```
+---
+.title[##Manca ancora qualcosa...]
+<br/>
+--
+.dark[
+###Ora l'installazione non richiede la compilazione,
+###i programmi installati sono facilmente rimovibili
+]
+<br/>
+--
+.dark[
+- ###Le dipendenze vanno soddisfatte manualmente
+- ###I binari sono specifici per ogni architettura
+- ###Non esistono aggiornamenti automatici
+]
+---
+.title[##I Package Manager]
+<br/>
+.dark[
+###Apt e Aptitude per gestire i .deb
+###Yum per gestire i pacchetti .rpm
+- ###Contengono moltissimi software utili
+- ###Il software è verificato (da chi gestisce i repo)
+- ###Le dipendenze vengono soddisfatte autonomamente
+- ###Gli aggiornamenti sono automatici e rapidi
+]
+---
+.title[##I Repository]
+<br/>
+.dark[
+###Archivi web in cui sono raggruppati i software installabili
+###Ogni distribuzione ha i suoi e ne esistono di non ufficiali
+]
+.dark.center[
+###Ubuntu ~ 47000 pacchetti
+###OpenSuse ~ 40000 pacchetti
+###Debian ~ 37000 pacchetti
+###Fedora ~ 22000 pacchetti
+]
+---
+.title[##Apt]
+<br/>
+.dark[
+###Advanced Packaging Tool
+<br/><br/>
+###Incluso nelle distribuzioni Debian based (Ubuntu, Mint)
+###Si può usare anche Aptitude: ha l'interfaccia grafica!
+]
+---
 
     </textarea>
     <script src="js/progress.min.js" type="text/javascript"></script>
