@@ -34,9 +34,9 @@ software.izzo.ovh
 <br/><br/><br/><br/><br/><br/>
 ##Fate tante domande!
 ---
-name: sign
-layout: true
-class: dark
+name:sign
+layout:true
+class:dark
 .sign[Niccolò Izzo]
 .course-right[Corsi Linux Avanzati 2015 - [POuL](https://poul.org)]
 ---
@@ -46,24 +46,57 @@ name:argomenti
 --
 .middle[.text[#Installare il Software]]
 --
-<br/><br/><br/><br/>
+<br/><br/><br/>
 .text[#Gestire i repository]
 ---
 
 .title[##Compilazione]
+<br/>
 --
-
-###Pro:
+.dark[
+###Pro
 - Codice ottimizzato e personalizzato
 - Possibile il controllo sui sorgenti
 </ul>
+]
 --
-
-###Contro:
+.dark[
+###Contro
 - Lenta per software complessi
 - Non tiene traccia del software
-</ul>
-Anche se in alcuni casi è l'unica possibilità.
+<br/><br/><br/>
+]
+--
+
+.dark[###Anche se in alcuni casi è l'unica possibilità.]
+---
+
+.title[##I pacchetti precompilati]
+<br/>
+--
+
+.dark[
+###Principalmente sono due:
+- .rpm per RHEL, Fedora e le loro derivate
+- .deb per Debian, Ubuntu e le loro derivate
+]
+--
+<br/>
+.dark[
+###Ma esistono anche
+- .tgz per Slackware
+- .pkg.tar.xz per Arch Linux
+]
+---
+.dark[##Le operazioni base]
+<br/>
+--
+
+.center[Per installare un pacchetto]
+```
+dpkg -i pacchetto.deb
+```
+
 
     </textarea>
     <script src="js/progress.min.js" type="text/javascript"></script>
