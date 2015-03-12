@@ -149,10 +149,10 @@ rpm -r pacchetto.rpm
 ###Ogni distribuzione ha i suoi e ne esistono di non ufficiali
 ]
 .dark.center[
-###Ubuntu ~ 47000 pacchetti
+###Ubuntu ~ 46000 pacchetti
 ###OpenSuse ~ 40000 pacchetti
 ###Debian ~ 37000 pacchetti
-###Fedora ~ 22000 pacchetti
+###Fedora ~ 40000 pacchetti
 ]
 ---
 .title[##Apt]
@@ -164,6 +164,113 @@ rpm -r pacchetto.rpm
 ###Si può usare anche Aptitude: ha l'interfaccia grafica!
 ]
 ---
+class:center
+.title[##Apt - Comandi base]
+###Per prima cosa aggiorniamo il database dei pacchetti
+```bash
+apt-get update
+```
+###Ricerca nel database
+```bash
+apt-cache search keyword
+```
+###Installazione di un pacchetto
+```bash
+apt-get install pacchetto
+```
+###Rimozione di un pacchetto
+```bash
+apt-get remove pacchetto
+```
+<br/>
+###Più informazioni su un pacchetto
+```bash
+apt-cache show pacchetto
+```
+---
+class:center
+.title[##Apt - Aggiornamento]
+<br/>
+###Aggiornamento semplice dei pacchetti installati
+```bash
+apt-get upgrade
+```
+<br/>
+###Aggiornamento completo dei pacchetti installati
+```bash
+apt-get dist-upgrade
+```
+<br/><br/>
+.dark[
+###Il secondo comando aggiorna anche se sono necessarie
+###modifiche alle relazioni tra i pacchetti installati
+]
+---
+class:center
+.title[##Apt - Altri comandi]
+<br/>
+###Pulisce tutta la cache contenuta in /var
+```bash
+apt-get clean
+```
+###Rimuove un pacchetto e i suoi file di configurazione
+```bash
+apt-get purge
+```
+###Elimina i pacchetti non più necessari al sistema
+```bash
+apt-get autoremove
+```
+###Permette di simulare un'azione
+```bash
+apt-get -s ...
+```
+---
+.title[##YUM]
+<br/>
+.dark[
+###Yellow dog Updater, Modified
+<br/><br/>
+###E' il package manager per le distribuzioni basate su rpm
+###si trova incluso di default in Fedora, RHEL, CentOS
+###A differenza di apt, aggiorna da solo il suo DB dei pacchetti
+]
+---
+class:center
+.title[##YUM - Comandi base]
+###Installazione di un pacchetto
+```bash
+yum install pacchetto
+```
+###Ricerca nel database dei pacchetti
+```bash
+yum search keyword
+```
+###Rimozione di un pacchetto (come apt-get purge)
+```bash
+yum remove pacchetto
+```
+<br/>
+###Più informazioni su un pacchetto
+```bash
+yum info pacchetto
+```
+---
+class:center
+.title[##YUM - Aggiornamento]
+<br/>
+###Aggiornamento semplice dei pacchetti installati
+```bash
+yum update
+```
+<br/>
+###Aggiornamento completo dei pacchetti installati
+```bash
+yum distro-sync
+```
+---
+<!-- Uhm, potrei approfondire molto le repo esterne tipo RPMfusion etc. -->
+<!-- Fixare la firma in basso che si sposta al centro. -->
 
     </textarea>
     <script src="js/progress.min.js" type="text/javascript"></script>
