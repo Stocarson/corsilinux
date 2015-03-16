@@ -23,15 +23,16 @@ class: center, dark
 ```html
 izzo.niccolo@gmail.com
 ```
+<br/><br/><br/>
 ###<img src="img/newlogo.png" alt="POuL Logo" style="height: 4em; margin-top: 1em">
 ---
 #Benvenuti
-<br/>
+<br/><br/><br/><br/><br/><br/>
 ###Qui trovate queste slide
 ```html
 software.izzo.ovh
 ```
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
 ##Fate tante domande!
 ---
 name:sign
@@ -42,29 +43,30 @@ class:dark
 ---
 
 name:argomenti
-.title[###Oggi vedremo come]
+.title[##Oggi vedremo come]
+<br/><br/>
 --
 .middle[.text[#Installare il Software]]
 --
-<br/><br/><br/>
+<br/><br/><br/><br/>
 .text[#Gestire i repository]
 ---
 
 .title[##Compilazione]
+<br/>
 
 --
-.dark[
 ###Pro
 - ####Codice ottimizzato e personalizzato
 - ####Possibile il controllo sui sorgenti
-</ul>
-]
+</ul><br/>
+
 --
-.dark[
 ###Contro
 - ####Lenta per software complessi
 - ####Non tiene traccia del software
-]
+<br/>
+
 --
 
 .dark[###Anche se in alcuni casi è l'unica possibilità.]
@@ -79,6 +81,8 @@ name:argomenti
 - ####.rpm per RHEL, Fedora e le loro derivate
 - ####.deb per Debian, Ubuntu e le loro derivate
 ]
+<br/>
+
 --
 .dark[
 ###Ma esistono anche
@@ -92,13 +96,13 @@ name:argomenti
 <br/>
 Debian based
 ]
-```bash
-dpkg -i pacchetto.deb
+```html
+# dpkg -i pacchetto.deb
 ```
 <br/><br/>
 .center[RPM based]
-```bash
-rpm -i pacchetto.rpm
+```html
+# rpm -i pacchetto.rpm
 ```
 ---
 .title[##Le operazioni base]
@@ -107,23 +111,23 @@ rpm -i pacchetto.rpm
 <br/>
 Debian based
 ]
-```bash
-dpkg -r pacchetto.deb
+```html
+# dpkg -r pacchetto.deb
 ```
 <br/><br/>
 .center[RPM based]
-```bash
-rpm -r pacchetto.rpm
+```html
+# rpm -r pacchetto.rpm
 ```
 ---
 .title[##Manca ancora qualcosa...]
-<br/>
+<br/><br/>
 --
 .dark[
 ###Ora l'installazione non richiede la compilazione,
 ###i programmi installati sono facilmente rimovibili
 ]
-<br/>
+<br/><br/>
 --
 .dark[
 - ###Le dipendenze vanno soddisfatte manualmente
@@ -132,10 +136,11 @@ rpm -r pacchetto.rpm
 ]
 ---
 .title[##I Package Manager]
-<br/>
+<br/><br/>
 .dark[
 ###Apt e Aptitude per gestire i .deb
 ###Yum per gestire i pacchetti .rpm
+<br/>
 - ###Contengono moltissimi software utili
 - ###Il software è verificato (da chi gestisce i repo)
 - ###Le dipendenze vengono soddisfatte autonomamente
@@ -143,11 +148,12 @@ rpm -r pacchetto.rpm
 ]
 ---
 .title[##I Repository]
-<br/>
+<br/><br/>
 .dark[
 ###Archivi web in cui sono raggruppati i software installabili
 ###Ogni distribuzione ha i suoi e ne esistono di non ufficiali
 ]
+<br/>
 .dark.center[
 ###Ubuntu ~ 46000 pacchetti
 ###OpenSuse ~ 40000 pacchetti
@@ -156,51 +162,50 @@ rpm -r pacchetto.rpm
 ]
 ---
 .title[##Apt]
-<br/>
+<br/><br/>
 .dark[
 ###Advanced Packaging Tool
-<br/><br/>
+<br/><br/><br/>
 ###Incluso nelle distribuzioni Debian based (Ubuntu, Mint)
 ###Si può usare anche Aptitude: ha l'interfaccia grafica!
 ]
 ---
 class:center
 .title[##Apt - Comandi base]
+<br/>
 ###Per prima cosa aggiorniamo il database dei pacchetti
-```bash
-apt-get update
-```
-###Ricerca nel database
-```bash
-apt-cache search keyword
-```
-###Installazione di un pacchetto
-```bash
-apt-get install pacchetto
-```
-###Rimozione di un pacchetto
-```bash
-apt-get remove pacchetto
+```html
+$ apt-get update
 ```
 <br/>
-###Più informazioni su un pacchetto
-```bash
-apt-cache show pacchetto
+###Ricerca nel database
+```html
+$ apt-cache search keyword
+```
+<br/>
+###Installazione di un pacchetto
+```html
+# apt-get install pacchetto
+```
+<br/>
+###Rimozione di un pacchetto
+```html
+# apt-get remove pacchetto
 ```
 ---
 class:center
 .title[##Apt - Aggiornamento]
-<br/>
+<br/><br/>
 ###Aggiornamento semplice dei pacchetti installati
-```bash
-apt-get upgrade
+```html
+# apt-get upgrade
 ```
 <br/>
 ###Aggiornamento completo dei pacchetti installati
-```bash
-apt-get dist-upgrade
+```html
+# apt-get dist-upgrade
 ```
-<br/><br/>
+<br/><br/><br/>
 .dark[
 ###Il secondo comando aggiorna anche se sono necessarie
 ###modifiche alle relazioni tra i pacchetti installati
@@ -209,21 +214,24 @@ apt-get dist-upgrade
 class:center
 .title[##Apt - Altri comandi]
 <br/>
+###Più informazioni su un pacchetto
+```html
+$ apt-cache show pacchetto
+```
+<br/>
 ###Pulisce tutta la cache contenuta in /var
-```bash
-apt-get clean
+```html
+# apt-get clean
 ```
+<br/>
 ###Rimuove un pacchetto e i suoi file di configurazione
-```bash
-apt-get purge
+```html
+# apt-get purge pacchetto
 ```
+<br/>
 ###Elimina i pacchetti non più necessari al sistema
-```bash
-apt-get autoremove
-```
-###Permette di simulare un'azione
-```bash
-apt-get -s ...
+```html
+# apt-get autoremove
 ```
 ---
 class:center
@@ -233,19 +241,24 @@ class:center
 ---
 class:center
 .title[##Apt - Repository]
-###Per aggiungere altre repository (di launchpad)
-```bash
-add-apt-repository ppa:utente/nome-ppa
-```
 <br/>
+###Per aggiungere altre repository (di launchpad)
+```html
+# add-apt-repository ppa:utente/nome-ppa
+```
+<br/><br/><br/>
 ###Altrimenti possiamo modificare a mano il file sources.list
 ###ricordandoci di aggiungere le relative chiavi GPG.
 ###É presente un'ottima guida sulla [wiki di Ubuntu.](http://wiki.ubuntu-it.org/Repository/RigaDiComando)
 ###Aggiorniamo sempre il database dei pacchetti
 ###dopo ogni modifica ai repository.
 ---
+.title[##Apt - Demo]
+<br/><br/><br/><br/><br/><br/>
+.center[#DEMO!]
+---
 .title[##YUM]
-<br/>
+<br/><br/>
 .dark[
 ###Yellow dog Updater, Modified
 <br/><br/>
@@ -258,49 +271,77 @@ class:center
 .title[##YUM - Comandi base]
 <br/>
 ###Installazione di un pacchetto
-```bash
-yum install pacchetto
+```html
+# yum install pacchetto
 ```
+<br/>
 ###Ricerca nel database dei pacchetti
-```bash
-yum search keyword
+```html
+$ yum search keyword
 ```
+<br/>
 ###Rimozione di un pacchetto (come apt-get purge)
-```bash
-yum remove pacchetto
+```html
+# yum remove pacchetto
 ```
 <br/>
 ###Più informazioni su un pacchetto
-```bash
-yum info pacchetto
+```html
+$ yum info pacchetto
 ```
 ---
 class:center
 .title[##YUM - Aggiornamento]
-<br/>
+<br/><br/><br/>
 ###Aggiornamento semplice dei pacchetti installati
-```bash
-yum update
+```html
+# yum update
 ```
 <br/>
 ###Aggiornamento completo dei pacchetti installati
-```bash
-yum distro-sync
+```html
+# yum distro-sync
 ```
 <br/>
 ###Pulizia della cache pacchetti
-```bash
-yum clean packages
+```html
+$ yum clean packages
 ```
 ---
 class:center
 .title[##YUM - Repository]
 ###/etc/yum/repos.d/fedora.repo
 ###<img src="img/repo.png" alt="repo" style="height: 13em">
+---
+class:center
+.title[##YUM - Repository]
+<br/>
+###Per aggiungere il file .repo da web
+```html
+# yum-config-manager --add-repo url_repository
+```
+<br/>
+###Quindi verifichiamo i repository presenti nel sistema
+```html
+$ yum repolist all
+```
+<br/>
+###Abilitiamo il repository appena inserito
+```html
+# yum-config-manager --enable nome_repository
+```
+<br/>
+###Per disabilitarlo...banalmente
+```html
+# yum-config-manager --disable nome_repository
+```
+---
+.title[##YUM - Demo]
+<br/><br/><br/><br/><br/><br/>
+.center[#DEMO!]
 
 <!-- Uhm, potrei approfondire molto le repo esterne tipo RPMfusion etc. -->
 <!-- O ancora meglio spiegare come fare nel caso medio per GitHub. -->
-<!-- Escapare # e aggiungerlo ai comandi dove occorre. -->
 <!-- Createrepo? -->
 
     </textarea>

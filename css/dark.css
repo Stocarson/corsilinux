@@ -12,7 +12,8 @@ h1, h2, h3, h4 {
   font-family: 'Open Sans';
   font-weight: 300;
   letter-spacing: -0.05em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.2em;
+  margin-top:0.2em;
 }
 h1 { font-size: 4.5em; }
 h2 { font-size: 2em; }
@@ -72,9 +73,16 @@ code {
   color: #f3f3f3;
   text-shadow: 0 0 0.3em #999;
 }
-.dark h1, .dark h2 {
+.dark h1 {
   color: #f3f3f3;
   line-height: 0.8em;
+  margin-bottom: 0.2em;
+}
+
+.dark h2 {
+  color: #f3f3f3;
+  line-height: 0.8em;
+  margin-bottom: 1em;
 }
 
 
@@ -92,7 +100,7 @@ code {
   margin: 0;
 }
 .text h3{
-  margin-top: 0.5em;
+  margin-top: 0.2em;
   padding-left: 2em;
 }
 .text h4{
