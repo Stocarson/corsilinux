@@ -92,40 +92,40 @@ name:argomenti
 ---
 .title[##Le operazioni base]
 <br/><br/>
-.center[##Per installare un pacchetto
-<br/>
-Debian based
-]
+.center[
+##Per installare un pacchetto
+###Debian based
 ```html
 # dpkg -i pacchetto.deb
 ```
 <br/><br/>
-.center[RPM based]
+###RPM based
 ```html
 # rpm -i pacchetto.rpm
 ```
+]
 ---
 .title[##Le operazioni base]
 <br/><br/>
-.center[##Per rimuovere un pacchetto
-<br/>
-Debian based
-]
+.center[
+##Per rimuovere un pacchetto
+###Debian based
 ```html
 # dpkg -r pacchetto.deb
 ```
 <br/><br/>
-.center[RPM based]
+###RPM based
 ```html
 # rpm -r pacchetto.rpm
 ```
+]
 ---
 .title[##Manca ancora qualcosa...]
 <br/><br/>
 --
 .dark[
 ###Ora l'installazione non richiede la compilazione,
-###i programmi installati sono facilmente rimovibili
+###i programmi installati sono facilmente rimovibili.
 ]
 <br/><br/>
 --
@@ -136,16 +136,16 @@ Debian based
 ]
 ---
 .title[##I Package Manager]
+--
 <br/><br/>
-.dark[
 ###Apt e Aptitude per gestire i .deb
 ###Yum per gestire i pacchetti .rpm
-<br/>
+--
+<br/><br/>
 - ###Contengono moltissimi software utili
 - ###Il software è verificato (da chi gestisce i repo)
 - ###Le dipendenze vengono soddisfatte autonomamente
 - ###Gli aggiornamenti sono automatici e rapidi
-]
 ---
 .title[##I Repository]
 <br/><br/>
@@ -163,15 +163,20 @@ Debian based
 ---
 .title[##Apt]
 <br/><br/>
-.dark[
+--
+
 ###Advanced Packaging Tool
+
+--
+<br/><br/>
+###É il software manager di Debian.
+###Ereditato da tutte le sue derivate (Ubuntu, Mint)
+--
 <br/><br/><br/>
-###Incluso nelle distribuzioni Debian based (Ubuntu, Mint)
 ###Si può usare anche Aptitude: ha l'interfaccia grafica!
-]
 ---
-class:center
 .title[##Apt - Comandi base]
+.center[
 <br/>
 ###Per prima cosa aggiorniamo il database dei pacchetti
 ```html
@@ -192,9 +197,10 @@ $ apt-cache search keyword
 ```html
 # apt-get remove pacchetto
 ```
+]
 ---
-class:center
 .title[##Apt - Aggiornamento]
+.center[
 <br/><br/>
 ###Aggiornamento semplice dei pacchetti installati
 ```html
@@ -206,13 +212,22 @@ class:center
 # apt-get dist-upgrade
 ```
 <br/><br/><br/>
-.dark[
-###Il secondo comando aggiorna anche se sono necessarie
-###modifiche alle relazioni tra i pacchetti installati
+###Il comando dist-upgrade aggiorna anche
+###i pacchetti che richiedono di aggiornarne altri.
 ]
 ---
-class:center
+.title[##Apt - Automatic Security Updates]
+<br/><br/>
+###É possibile configurare apt per installare
+###in modo automatico gli aggiornamenti.
+<br/>
+###Utile per ottenere gli aggiornamenti
+###di sicurezza appena vengono rilasciati.
+<br/>
+###Guida dettagliata nella [documentazione di Ubuntu.](https://help.ubuntu.com/community/AutomaticSecurityUpdates)
+---
 .title[##Apt - Altri comandi]
+.center[
 <br/>
 ###Più informazioni su un pacchetto
 ```html
@@ -233,18 +248,20 @@ $ apt-cache show pacchetto
 ```html
 # apt-get autoremove
 ```
+]
 ---
-class:center
 .title[##Apt - Repository]
+.center[
 ###/etc/apt/sources.list
 ###<img src="img/sources.png" alt="sources" style="height: 13em">
+]
 ---
-class:center
 .title[##Apt - Repository]
 <br/>
+.center[
 ###Per aggiungere altre repository (di launchpad)
 ```html
-# add-apt-repository ppa:utente/nome-ppa
+# add-apt-repository ppa:utente/nome_ppa
 ```
 <br/><br/><br/>
 ###Altrimenti possiamo modificare a mano il file sources.list
@@ -252,6 +269,7 @@ class:center
 ###É presente un'ottima guida sulla [wiki di Ubuntu.](http://wiki.ubuntu-it.org/Repository/RigaDiComando)
 ###Aggiorniamo sempre il database dei pacchetti
 ###dopo ogni modifica ai repository.
+]
 ---
 .title[##Apt - Demo]
 <br/><br/><br/><br/><br/><br/>
@@ -267,8 +285,8 @@ class:center
 ###A differenza di apt, aggiorna da solo il suo DB dei pacchetti
 ]
 ---
-class:center
 .title[##YUM - Comandi base]
+.center[
 <br/>
 ###Installazione di un pacchetto
 ```html
@@ -289,9 +307,10 @@ $ yum search keyword
 ```html
 $ yum info pacchetto
 ```
+]
 ---
-class:center
 .title[##YUM - Aggiornamento]
+.center[
 <br/><br/><br/>
 ###Aggiornamento semplice dei pacchetti installati
 ```html
@@ -307,14 +326,24 @@ class:center
 ```html
 $ yum clean packages
 ```
+]
 ---
-class:center
+.title[##YUM - AutoUpdates]
+<br/><br/><br/>
+###Anche YUM supporta gli aggiornamenti automatici.
+<br/>
+###Ma non è necessariamente la scelta giusta abilitarli.
+<br/>
+###Trovate una guida completa nella [wiki di Fedora.](http://fedoraproject.org/wiki/AutoUpdates)
+---
 .title[##YUM - Repository]
+.center[
 ###/etc/yum/repos.d/fedora.repo
 ###<img src="img/repo.png" alt="repo" style="height: 13em">
+]
 ---
-class:center
 .title[##YUM - Repository]
+.center[
 <br/>
 ###Per aggiungere il file .repo da web
 ```html
@@ -335,14 +364,22 @@ $ yum repolist all
 ```html
 # yum-config-manager --disable nome_repository
 ```
+]
 ---
 .title[##YUM - Demo]
 <br/><br/><br/><br/><br/><br/>
 .center[#DEMO!]
+---
+class:center, middle
+#Fine
+<br/><br/>
+###Grazie per l'attenzione.
+
+
 
 <!-- Uhm, potrei approfondire molto le repo esterne tipo RPMfusion etc. -->
 <!-- O ancora meglio spiegare come fare nel caso medio per GitHub. -->
-<!-- Createrepo? -->
+<!-- Aggiornamenti automatici YUM -->
 
     </textarea>
     <script src="js/progress.min.js" type="text/javascript"></script>
