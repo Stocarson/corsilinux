@@ -154,11 +154,12 @@ name:argomenti
 ###Ogni distribuzione ha i suoi e ne esistono di non ufficiali
 ]
 <br/>
-.dark.center[
-###Ubuntu ~ 46000 pacchetti
-###OpenSuse ~ 40000 pacchetti
-###Debian ~ 37000 pacchetti
-###Fedora ~ 40000 pacchetti
+.center[
+###Ubuntu 14.04~ 46000 pacchetti
+###Debian Sid~ 45000 pacchetti
+###Fedora 21~ 40000 pacchetti
+<br/>
+###Considerando i pacchetti precompilati per amd64.
 ]
 ---
 .title[##Apt]
@@ -169,7 +170,7 @@ name:argomenti
 
 --
 <br/><br/>
-###É il software manager di Debian.
+###É il package manager di Debian.
 ###Ereditato da tutte le sue derivate (Ubuntu, Mint)
 --
 <br/><br/><br/>
@@ -201,7 +202,7 @@ $ apt-cache search keyword
 ---
 .title[##Apt - Aggiornamento]
 .center[
-<br/><br/>
+<br/>
 ###Aggiornamento semplice dei pacchetti installati
 ```html
 # apt-get upgrade
@@ -211,9 +212,10 @@ $ apt-cache search keyword
 ```html
 # apt-get dist-upgrade
 ```
-<br/><br/><br/>
+<br/><br/>
 ###Il comando dist-upgrade aggiorna anche
-###i pacchetti che richiedono di aggiornarne altri.
+###i pacchetti che richiedono l'installazione
+###o la rimozione di altri pacchetti.
 ]
 ---
 .title[##Apt - Automatic Security Updates]
@@ -224,7 +226,7 @@ $ apt-cache search keyword
 ###Utile per ottenere gli aggiornamenti
 ###di sicurezza appena vengono rilasciati.
 <br/>
-###Guida dettagliata nella [documentazione di Ubuntu.](https://help.ubuntu.com/community/AutomaticSecurityUpdates)
+###Guida dettagliata nelle wiki di [Ubuntu](https://help.ubuntu.com/community/AutomaticSecurityUpdates) e [Debian](https://wiki.debian.org/UnattendedUpgrades).
 ---
 .title[##Apt - Altri comandi]
 .center[
@@ -234,7 +236,7 @@ $ apt-cache search keyword
 $ apt-cache show pacchetto
 ```
 <br/>
-###Pulisce tutta la cache contenuta in /var
+###Pulisce tutta la cache contenuta in /var/cache/apt
 ```html
 # apt-get clean
 ```
@@ -250,6 +252,22 @@ $ apt-cache show pacchetto
 ```
 ]
 ---
+.title[##Apt - ora in Tecnicolor!]
+.center[
+###Per tutti i comandi precedenti possiamo sostituire
+###le keyword "apt-get", "apt-cache" e "apt-file" con "apt".
+<br/>
+###Ma alcuni comandi sono leggermente diversi:
+```html
+# apt upgrade
+```
+###aggiorna i pacchetti anche se richiedono l'installazione<br/>ma non la rimozione di pacchetti aggiuntivi.
+```html
+# apt full-upgrade
+```
+###Svolge la funzione del precedente "dist-upgrade".
+]
+---
 .title[##Apt - Repository]
 .center[
 ###/etc/apt/sources.list
@@ -257,16 +275,19 @@ $ apt-cache show pacchetto
 ]
 ---
 .title[##Apt - Repository]
-<br/>
 .center[
 ###Per aggiungere altre repository (di launchpad)
 ```html
 # add-apt-repository ppa:utente/nome_ppa
 ```
-<br/><br/><br/>
+<br/>
+###Oppure passando una stringa da inserire in sources.list
+```html
+# add-apt-repository 'deb uri_distribution [component] [component]'
+```
+<br/><br/>
 ###Altrimenti possiamo modificare a mano il file sources.list
 ###ricordandoci di aggiungere le relative chiavi GPG.
-###É presente un'ottima guida sulla [wiki di Ubuntu.](http://wiki.ubuntu-it.org/Repository/RigaDiComando)
 ###Aggiorniamo sempre il database dei pacchetti
 ###dopo ogni modifica ai repository.
 ]
@@ -371,9 +392,11 @@ $ yum repolist all
 .center[#DEMO!]
 ---
 class:center, middle
+##Grazie per l'attenzione.
+<br/><br/><br/>
 #Fine
-<br/><br/>
-###Grazie per l'attenzione.
+<br/><br/><br/><br/>
+####Queste slides sono distribuite sotto [licenza MIT](http://opensource.org/licenses/MIT).
 
 
 
