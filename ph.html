@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Editing Fotografico</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="keywords" content="remark,remarkjs,markdown,slideshow,presentation" />
+    <meta name="description" content="A simple, in-browser, markdown-driven slideshow tool." />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/dark.css"/>
+    <link rel="stylesheet" href="css/progressjs.min.css"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+name: dark
+layout: true
+class: center, dark
+---
+#Editing Fotografico
+##Libreria e post-produzione
+<br/>
+###Niccolò Izzo
+```html
+izzo.niccolo@gmail.com
+```
+<br/><br/><br/>
+###<img src="img/newlogo.svg" alt="POuL Logo" style="height: 4em; margin-top: 1em">
+---
+#Benvenuti
+<br/><br/><br/><br/><br/><br/>
+###Qui trovate queste slide
+```html
+foto.izzo.ovh
+```
+<br/><br/><br/><br/><br/><br/><br/>
+##Le domande sono gratis!
+---
+name:sign
+layout:true
+class:dark
+.sign[.left[Niccolò Izzo]]
+.course-right[Corsi Linux Avanzati 2015 - [POuL](https://poul.org)]
+---
+
+name:argomenti
+.title[##Stasera impareremo a]
+<br/><br/></br>
+--
+.text[###Organizzare la libreria fotografica]
+--
+<br/><br/><br/><br/><br/></br>
+.text[###Gestire la post-produzione]
+--
+<br/><br/><br/><br/><br/></br>
+.text[###Sviluppare i file RAW]
+---
+
+.title[##Perchè linux?]
+--
+<br/><br/>
+.text[###Libertà totale nel gestire le proprie foto.]
+--
+<br/><br/><br/><br/><br/>
+.text[###Tutto il software é gratuito.]
+--
+<br/><br/><br/><br/><br/>
+.text[###Strumenti livello professionale.]
+--
+<br/><br/><br/><br/><br/>
+.text[###Codice open-source.]
+---
+.title[##Libreria fotografica]
+.center[.text[#Darktable]]
+.center[###<img src="img/darktable.svg" alt="Darktable" style="height: 8em; margin-top: 1em">]
+--
+.text[####É un software per l'editing e l'archiviazione delle foto.]
+--
+.text[####La struttura a database permette modifiche reversibili.]
+---
+.title[##Libreria fotografica - Demo]
+<br/><br/><br/><br/><br/><br/>
+.center[#DEMO!]
+---
+class:center, middle
+##Grazie per l'attenzione.
+<br/><br/><br/>
+#Fine
+<br/><br/><br/><br/>
+####Queste slides sono distribuite sotto [licenza MIT](http://opensource.org/licenses/MIT).
+
+
+
+<!-- Nella parte di editing non devono mancare i photomerge e gli HDR, che sono le cose fiche(tm) -->
+
+    </textarea>
+    <script src="js/progress.min.js" type="text/javascript"></script>
+    <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="js/remark.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var hljs = remark.highlighter.engine;
+    </script>
+    <script src="js/remark.language.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      var slideshow = remark.create({
+        highlightStyle: 'ascetic',
+        highlightLanguage: 'remark'
+      }) ;
+      $('.remark-slide-number').hide()
+      var progbar = progressJs(".remark-slides-area");
+      progbar.start();
+      slideshow.on('showSlide', function (slide) {
+        var total = $('.remark-slide-number').html().split(" / ")[1]
+        progbar.set(slide.getSlideNo()/total*100);
+      });
+    });
+    </script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-46402862-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
